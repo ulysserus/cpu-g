@@ -1,17 +1,18 @@
 Name: cpu-g
 Version: 0.16.2
-Release: alt1.1
+Release: alt2
 
 License: GPLv3
 Group: System/Kernel and hardware
 Summary: CPU-G is an application that shows useful information about your hardware
-Url: https://github.com/atareao/cpu-g
+Url: https://github.com/ulysserus/cpu-g
 
-Source0: %name-%version.tar.gz
+Source0: %name-%version.tar
 Source1: %name-uk_UA.po
 Source2: %name.desktop
 
 Requires: /usr/bin/glxinfo
+Requires: pciutils
 
 BuildArch: noarch
 
