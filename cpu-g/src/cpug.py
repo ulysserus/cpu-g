@@ -29,7 +29,6 @@ except Exception as e:
     print(e)
     exit(-1)
 from gi.repository import Gtk
-from gi.repository import GObject
 from gi.repository import GLib
 import os
 import locale
@@ -69,9 +68,9 @@ class CPUG(Gtk.Window):
         notebook.append_page(vbox1, Gtk.Label.new(_('Processor')))
         frame11 = Gtk.Frame.new(_('General'))
         vbox1.pack_start(frame11, True, True, 0)
-        table11 = Gtk.Table(3, 3, False)
+        table11 = Gtk.Table.new(3, 3, False)
         frame11.add(table11)
-        label = Gtk.Label(_('Vendor'))
+        label = Gtk.Label.new(_('Vendor'))
         label.set_alignment(0, 0.5)
         table11.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -82,7 +81,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Model'))
+        label = Gtk.Label.new(_('Model'))
         label.set_alignment(0, 0.5)
         table11.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -93,7 +92,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Core Speed'))
+        label = Gtk.Label.new(_('Core Speed'))
         label.set_alignment(0, 0.5)
         table11.attach(label, 0, 1, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -111,9 +110,9 @@ class CPUG(Gtk.Window):
                        xpadding=5, ypadding=5)
         frame12 = Gtk.Frame.new(_('CPU'))
         vbox1.pack_start(frame12, True, True, 0)
-        table12 = Gtk.Table(3, 6, False)
+        table12 = Gtk.Table.new(3, 6, False)
         frame12.add(table12)
-        label = Gtk.Label(_('Family'))
+        label = Gtk.Label.new(_('Family'))
         label.set_alignment(0, 0.5)
         table12.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -125,7 +124,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Model'))
+        label = Gtk.Label.new(_('Model'))
         label.set_alignment(0, 0.5)
         table12.attach(label, 2, 3, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -137,7 +136,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Stepping'))
+        label = Gtk.Label.new(_('Stepping'))
         label.set_alignment(0, 0.5)
         table12.attach(label, 4, 5, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -149,7 +148,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Flags'))
+        label = Gtk.Label.new(_('Flags'))
         label.set_alignment(0, 0.5)
         table12.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -160,7 +159,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Bogomips'))
+        label = Gtk.Label.new(_('Bogomips'))
         label.set_alignment(0, 0.5)
         table12.attach(label, 0, 1, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -171,7 +170,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Width'))
+        label = Gtk.Label.new(_('Width'))
         label.set_alignment(0, 0.5)
         table12.attach(label, 3, 4, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -186,9 +185,9 @@ class CPUG(Gtk.Window):
 
         frame13 = Gtk.Frame.new(_('Cache'))
         vbox1.pack_start(frame13, True, True, 0)
-        table13 = Gtk.Table(4, 2, False)
+        table13 = Gtk.Table.new(4, 2, False)
         frame13.add(table13)
-        label = Gtk.Label(_('L1 Data'))
+        label = Gtk.Label.new(_('L1 Data'))
         label.set_alignment(0, 0.5)
         table13.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -199,7 +198,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('L1 Instruction'))
+        label = Gtk.Label.new(_('L1 Instruction'))
         label.set_alignment(0, 0.5)
         table13.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -210,7 +209,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Level 2'))
+        label = Gtk.Label.new(_('Level 2'))
         label.set_alignment(0, 0.5)
         table13.attach(label, 0, 1, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -221,7 +220,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Level 3'))
+        label = Gtk.Label.new(_('Level 3'))
         label.set_alignment(0, 0.5)
         table13.attach(label, 0, 1, 3, 4,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -235,9 +234,9 @@ class CPUG(Gtk.Window):
 
         frame14 = Gtk.Frame.new(_('Core selection'))
         vbox1.pack_start(frame14, True, True, 0)
-        table14 = Gtk.Table(1, 3, False)
+        table14 = Gtk.Table.new(1, 3, False)
         frame14.add(table14)
-        label = Gtk.Label(_('Number of cores'))
+        label = Gtk.Label.new(_('Number of cores'))
         label.set_alignment(0, 0.5)
         table14.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -263,9 +262,9 @@ class CPUG(Gtk.Window):
         notebook.append_page(vbox2, Gtk.Label.new(_('Motherboard')))
         frame21 = Gtk.Frame.new(_('Board'))
         vbox2.pack_start(frame21, True, True, 0)
-        table21 = Gtk.Table(2, 2, False)
+        table21 = Gtk.Table.new(2, 2, False)
         frame21.add(table21)
-        label = Gtk.Label(_('Vendor'))
+        label = Gtk.Label.new(_('Vendor'))
         label.set_alignment(0, 0.5)
         table21.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -276,7 +275,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Model'))
+        label = Gtk.Label.new(_('Model'))
         label.set_alignment(0, 0.5)
         table21.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -289,9 +288,9 @@ class CPUG(Gtk.Window):
                        xpadding=5, ypadding=5)
         frame22 = Gtk.Frame.new(_('Bios'))
         vbox2.pack_start(frame22, True, True, 0)
-        table22 = Gtk.Table(3, 2, False)
+        table22 = Gtk.Table.new(3, 2, False)
         frame22.add(table22)
-        label = Gtk.Label(_('Vendor'))
+        label = Gtk.Label.new(_('Vendor'))
         label.set_alignment(0, 0.5)
         table22.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -302,7 +301,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Version'))
+        label = Gtk.Label.new(_('Version'))
         label.set_alignment(0, 0.5)
         table22.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -313,7 +312,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Date'))
+        label = Gtk.Label.new(_('Date'))
         label.set_alignment(0, 0.5)
         table22.attach(label, 0, 1, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -329,9 +328,9 @@ class CPUG(Gtk.Window):
         notebook.append_page(vbox3, Gtk.Label.new(_('Memory')))
         frame31 = Gtk.Frame.new(_('Ram'))
         vbox3.pack_start(frame31, True, True, 0)
-        table31 = Gtk.Table(8, 2, False)
+        table31 = Gtk.Table.new(8, 2, False)
         frame31.add(table31)
-        label = Gtk.Label(_('Total'))
+        label = Gtk.Label.new(_('Total'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -343,7 +342,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Available'))
+        label = Gtk.Label.new(_('Available'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 1, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -365,7 +364,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Used'))
+        label = Gtk.Label.new(_('Used'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 3, 5,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -386,7 +385,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Free'))
+        label = Gtk.Label.new(_('Free'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 5, 7,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -407,7 +406,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Active'))
+        label = Gtk.Label.new(_('Active'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 7, 8,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -420,7 +419,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Inactive'))
+        label = Gtk.Label.new(_('Inactive'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 8, 9,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -433,7 +432,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Buffers'))
+        label = Gtk.Label.new(_('Buffers'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 9, 10,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -446,7 +445,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Cached'))
+        label = Gtk.Label.new(_('Cached'))
         label.set_alignment(0, 0.5)
         table31.attach(label, 0, 1, 10, 11,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -460,9 +459,9 @@ class CPUG(Gtk.Window):
                        xpadding=5, ypadding=5)
         frame32 = Gtk.Frame.new(_('Swap'))
         vbox3.pack_start(frame32, True, True, 0)
-        table32 = Gtk.Table(8, 2, False)
+        table32 = Gtk.Table.new(8, 2, False)
         frame32.add(table32)
-        label = Gtk.Label(_('Total'))
+        label = Gtk.Label.new(_('Total'))
         label.set_alignment(0, 0.5)
         table32.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -475,7 +474,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Used'))
+        label = Gtk.Label.new(_('Used'))
         label.set_alignment(0, 0.5)
         table32.attach(label, 0, 1, 1, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -495,7 +494,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Free'))
+        label = Gtk.Label.new(_('Free'))
         label.set_alignment(0, 0.5)
         table32.attach(label, 0, 1, 3, 5,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -515,7 +514,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Sin'))
+        label = Gtk.Label.new(_('Sin'))
         label.set_alignment(0, 0.5)
         table32.attach(label, 0, 1, 5, 6,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -528,7 +527,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Sout'))
+        label = Gtk.Label.new(_('Sout'))
         label.set_alignment(0, 0.5)
         table32.attach(label, 0, 1, 6, 7,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -547,9 +546,9 @@ class CPUG(Gtk.Window):
         notebook.append_page(vbox4, Gtk.Label.new(_('System')))
         frame41 = Gtk.Frame.new()
         vbox4.pack_start(frame41, True, True, 0)
-        table41 = Gtk.Table(7, 3, False)
+        table41 = Gtk.Table.new(7, 3, False)
         frame41.add(table41)
-        label = Gtk.Label(_('Hostname'))
+        label = Gtk.Label.new(_('Hostname'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -560,7 +559,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Architecture'))
+        label = Gtk.Label.new(_('Architecture'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -571,7 +570,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Kernel'))
+        label = Gtk.Label.new(_('Kernel'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -582,7 +581,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('GCC Version'))
+        label = Gtk.Label.new(_('GCC Version'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 3, 4,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -593,7 +592,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Uptime'))
+        label = Gtk.Label.new(_('Uptime'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 4, 5,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -604,7 +603,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Xorg Server version'))
+        label = Gtk.Label.new(_('Xorg Server version'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 5, 6,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -615,7 +614,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Resolution'))
+        label = Gtk.Label.new(_('Resolution'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 6, 7,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -627,7 +626,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Distribution'))
+        label = Gtk.Label.new(_('Distribution'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 7, 8,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -638,7 +637,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Desktop environment'))
+        label = Gtk.Label.new(_('Desktop environment'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 8, 9,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -650,7 +649,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Window manager'))
+        label = Gtk.Label.new(_('Window manager'))
         label.set_alignment(0, 0.5)
         table41.attach(label, 0, 1, 9, 10,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -673,9 +672,9 @@ class CPUG(Gtk.Window):
         notebook.append_page(vbox5, Gtk.Label.new(_('Graphic')))
         frame51 = Gtk.Frame.new()
         vbox5.pack_start(frame51, True, True, 0)
-        table51 = Gtk.Table(4, 2, False)
+        table51 = Gtk.Table.new(4, 2, False)
         frame51.add(table51)
-        label = Gtk.Label(_('Graphic Controller'))
+        label = Gtk.Label.new(_('Graphic Controller'))
         label.set_alignment(0, 0.5)
         table51.attach(label, 0, 1, 0, 1,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -686,7 +685,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('OpenGL Vendor'))
+        label = Gtk.Label.new(_('OpenGL Vendor'))
         label.set_alignment(0, 0.5)
         table51.attach(label, 0, 1, 1, 2,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -697,7 +696,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('OpenGL renderer'))
+        label = Gtk.Label.new(_('OpenGL renderer'))
         label.set_alignment(0, 0.5)
         table51.attach(label, 0, 1, 2, 3,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -708,7 +707,7 @@ class CPUG(Gtk.Window):
                        xoptions=Gtk.AttachOptions.FILL,
                        yoptions=Gtk.AttachOptions.FILL,
                        xpadding=5, ypadding=5)
-        label = Gtk.Label(_('OpenGL version'))
+        label = Gtk.Label.new(_('OpenGL version'))
         label.set_alignment(0, 0.5)
         table51.attach(label, 0, 1, 3, 4,
                        xoptions=Gtk.AttachOptions.FILL,
@@ -732,9 +731,9 @@ class CPUG(Gtk.Window):
 
         frame611 = Gtk.Frame.new()
         vbox6.pack_start(frame611, True, True, 0)
-        table611 = Gtk.Table(8, 4, False)
+        table611 = Gtk.Table.new(8, 4, False)
         frame611.add(table611)
-        label = Gtk.Label(_('Manufacturer'))
+        label = Gtk.Label.new(_('Manufacturer'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 0, 1,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -746,7 +745,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Model name'))
+        label = Gtk.Label.new(_('Model name'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 1, 2,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -758,7 +757,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Serial number'))
+        label = Gtk.Label.new(_('Serial number'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 2, 3,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -770,7 +769,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Technology'))
+        label = Gtk.Label.new(_('Technology'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 3, 4,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -782,7 +781,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Estimated time remaining'))
+        label = Gtk.Label.new(_('Estimated time remaining'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 4, 5,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -794,7 +793,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Estimated battery discharge time'))
+        label = Gtk.Label.new(_('Estimated battery discharge time'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 5, 6,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -806,7 +805,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Battery level'))
+        label = Gtk.Label.new(_('Battery level'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 0, 1, 6, 8,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -826,7 +825,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Capacity level'))
+        label = Gtk.Label.new(_('Capacity level'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 0, 1,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -838,7 +837,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Voltage now'))
+        label = Gtk.Label.new(_('Voltage now'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 1, 2,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -850,7 +849,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Minimum voltage design'))
+        label = Gtk.Label.new(_('Minimum voltage design'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 2, 3,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -862,7 +861,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Charge now'))
+        label = Gtk.Label.new(_('Charge now'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 3, 4,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -874,7 +873,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Charge full'))
+        label = Gtk.Label.new(_('Charge full'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 4, 5,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -886,7 +885,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Charge full design'))
+        label = Gtk.Label.new(_('Charge full design'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 5, 6,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -898,7 +897,7 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.FILL,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label(_('Current now'))
+        label = Gtk.Label.new(_('Current now'))
         label.set_alignment(0, 0.5)
         table611.attach(label, 2, 3, 6, 7,
                         xoptions=Gtk.AttachOptions.FILL,
@@ -938,7 +937,7 @@ class CPUG(Gtk.Window):
         notebook.append_page(vbox99, Gtk.Label.new(_('About')))
         frame991 = Gtk.Frame.new()
         vbox99.pack_start(frame991, True, True, 0)
-        table991 = Gtk.Table(9, 1, False)
+        table991 = Gtk.Table.new(9, 1, False)
         frame991.add(table991)
         logo = Gtk.Image()
         logo.set_from_file(comun.ICON)
@@ -946,14 +945,14 @@ class CPUG(Gtk.Window):
                         xoptions=Gtk.AttachOptions.EXPAND,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label()
+        label = Gtk.Label.new()
         label.set_markup('<span color="black" font_desc="Ubuntu 32">%s</span>'
                          % ('<b>CPU-G</b>'))
         table991.attach(label, 0, 1, 1, 2,
                         xoptions=Gtk.AttachOptions.EXPAND,
                         yoptions=Gtk.AttachOptions.FILL,
                         xpadding=5, ypadding=5)
-        label = Gtk.Label()
+        label = Gtk.Label.new()
         label.set_markup('<span font_desc="Ubuntu 16">%s</span>'
                          % (comun.VERSION))
         table991.attach(label, 0, 1, 2, 3,
@@ -965,7 +964,7 @@ CPU-G is an application that shows useful
 information about your CPU, RAM, Motherboard
 and some general information about your system
 """
-        label = Gtk.Label()
+        label = Gtk.Label.new()
         label.set_markup('<span font_desc="Ubuntu 14">%s</span>'
                          % (cpug_description))
         table991.attach(label, 0, 1, 3, 4,
@@ -979,7 +978,7 @@ Copyright © 2012 Michał Głowienka
 Copyright © 2012 Michał Olber
 Copyright © 2016-2019 Lorenzo Carbonell
 """
-        label = Gtk.Label()
+        label = Gtk.Label.new()
         label.set_markup('<span font_desc="Ubuntu 12">%s</span>'
                          % (mcopyright))
         table991.attach(label, 0, 1, 4, 8,
@@ -1054,7 +1053,7 @@ cpu-g-donde-ver-hardware-instalado/')
             self.battery_data2.set_text('--')
         current_level = bd.get_percentage()
         self.battery_level_value.set_text(
-            locale.format('%.2f', current_level) + _(' %'))
+            locale.format_string('%.2f', current_level) + _(' %'))
         self.battery_level.set_value(current_level)
         inv = Investigator()
         self.battery_capacity_level.set_text(
@@ -1062,37 +1061,37 @@ cpu-g-donde-ver-hardware-instalado/')
         self._aux_set_text(
             self.battery_voltage_now,
             inv.battery_info('voltage-now'),
-            locale.format(
+            locale.format_string(
                 '%.2f',
                 inv.battery_info('voltage-now')/1000000) + _(' V'))
         self._aux_set_text(
             self.battery_min_voltage_design,
             inv.battery_info('voltage-min-design'),
-            locale.format(
+            locale.format_string(
                 '%.2f',
                 inv.battery_info('voltage-min-design')/1000000) + _(' V'))
         self._aux_set_text(
             self.battery_charge_now,
             inv.battery_info('charge-now'),
-            locale.format(
+            locale.format_string(
                 '%.2f',
                 inv.battery_info('charge-now')/1000000) + _(' Ah'))
         self._aux_set_text(
             self.battery_charge_full,
             inv.battery_info('charge-full'),
-            locale.format(
+            locale.format_string(
                 '%.2f',
                 inv.battery_info('charge-full')/1000000) + _(' Ah'))
         self._aux_set_text(
             self.battery_charge_full_design,
             inv.battery_info('charge-full-design'),
-            locale.format(
+            locale.format_string(
                 '%.2f',
                 inv.battery_info('charge-full-design')/1000000) + _(' Ah'))
         self._aux_set_text(
             self.battery_current_now,
             inv.battery_info('current-now'),
-            locale.format(
+            locale.format_string(
                 '%.2f',
                 inv.battery_info('current-now')/1000000) + _(' A'))
         return True
@@ -1104,40 +1103,40 @@ cpu-g-donde-ver-hardware-instalado/')
     def ram_update(self):
         values = Investigator().raminfo()
         self.ram_total.set_text(
-            locale.format('%.1f', values['total'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['total'], True) + ' ' + _('MB'))
         self.ram_available.set_text(
-            locale.format('%.1f', values['available'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['available'], True) + ' ' + _('MB'))
         self.ram_available_progress.set_value(
             values['available']/values['total'])
         self.ram_used.set_text(
-            locale.format('%.1f', values['used'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['used'], True) + ' ' + _('MB'))
         self.ram_used_progress.set_value(values['used']/values['total'])
         self.ram_free.set_text(
-            locale.format('%.1f', values['free'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['free'], True) + ' ' + _('MB'))
         self.ram_free_progress.set_value(values['free']/values['total'])
         self.ram_active.set_text(
-            locale.format('%.1f', values['active'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['active'], True) + ' ' + _('MB'))
         self.ram_inactive.set_text(
-            locale.format('%.1f', values['inactive'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['inactive'], True) + ' ' + _('MB'))
         self.ram_buffers.set_text(
-            locale.format('%.1f', values['buffers'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['buffers'], True) + ' ' + _('MB'))
         self.ram_cached.set_text(
-            locale.format('%.1f', values['cached'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['cached'], True) + ' ' + _('MB'))
         values = Investigator().swapinfo()
         self.swap_total.set_text(
-            locale.format('%.1f', values['total'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['total'], True) + ' ' + _('MB'))
         if values['total'] == 0:
             values['total'] = 1
         self.swap_used.set_text(
-            locale.format('%.1f', values['used'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['used'], True) + ' ' + _('MB'))
         self.swap_used_progress.set_value(values['used']/values['total'])
         self.swap_free.set_text(
-            locale.format('%.1f', values['free'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['free'], True) + ' ' + _('MB'))
         self.swap_free_progress.set_value(values['free']/values['total'])
         self.swap_sin.set_text(
-            locale.format('%.1f', values['sin'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['sin'], True) + ' ' + _('MB'))
         self.swap_sout.set_text(
-            locale.format('%.1f', values['sout'], True) + ' ' + _('MB'))
+            locale.format_string('%.1f', values['sout'], True) + ' ' + _('MB'))
         return True
 
     def close_application(self, widget):
@@ -1201,9 +1200,9 @@ cpu-g-donde-ver-hardware-instalado/')
         for device in devices:
             frame7x = Gtk.Frame.new()
             self.vbox71.pack_start(frame7x, True, True, 0)
-            table7x = Gtk.Table(10, 2, False)
+            table7x = Gtk.Table.new(10, 2, False)
             frame7x.add(table7x)
-            label = Gtk.Label(_('Device'))
+            label = Gtk.Label.new(_('Device'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 0, 1,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1215,7 +1214,7 @@ cpu-g-donde-ver-hardware-instalado/')
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
             entry.set_text(device['device'])
-            label = Gtk.Label(_('Mount Point'))
+            label = Gtk.Label.new(_('Mount Point'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 1, 2,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1227,7 +1226,7 @@ cpu-g-donde-ver-hardware-instalado/')
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
             entry.set_text(device['mountpoint'])
-            label = Gtk.Label(_('File System Type'))
+            label = Gtk.Label.new(_('File System Type'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 2, 3,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1239,7 +1238,7 @@ cpu-g-donde-ver-hardware-instalado/')
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
             entry.set_text(device['fstype'])
-            label = Gtk.Label(_('Options'))
+            label = Gtk.Label.new(_('Options'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 3, 4,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1255,7 +1254,7 @@ cpu-g-donde-ver-hardware-instalado/')
             else:
                 entry.set_width_chars(len(device['opts']))
             entry.set_text(device['opts'])
-            label = Gtk.Label(_('Total space'))
+            label = Gtk.Label.new(_('Total space'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 4, 5,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1266,9 +1265,9 @@ cpu-g-donde-ver-hardware-instalado/')
                            xoptions=Gtk.AttachOptions.FILL,
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
-            entry.set_text(locale.format(
+            entry.set_text(locale.format_string(
                 '%.2f', device['total']/1024/1024, True) + ' ' + _('MB'))
-            label = Gtk.Label(_('Used space'))
+            label = Gtk.Label.new(_('Used space'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 5, 7,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1279,7 +1278,7 @@ cpu-g-donde-ver-hardware-instalado/')
                            xoptions=Gtk.AttachOptions.FILL,
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
-            entry.set_text(locale.format(
+            entry.set_text(locale.format_string(
                 '%.2f', device['used']/1024/1024, True) + ' ' + _('MB'))
             disk_used_progress = Gtk.LevelBar()
             disk_used_progress.set_min_value(0)
@@ -1289,7 +1288,7 @@ cpu-g-donde-ver-hardware-instalado/')
                            xoptions=Gtk.AttachOptions.FILL,
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
-            label = Gtk.Label(_('Free space'))
+            label = Gtk.Label.new(_('Free space'))
             label.set_alignment(0, 0.5)
             table7x.attach(label, 0, 1, 7, 9,
                            xoptions=Gtk.AttachOptions.FILL,
@@ -1300,7 +1299,7 @@ cpu-g-donde-ver-hardware-instalado/')
                            xoptions=Gtk.AttachOptions.FILL,
                            yoptions=Gtk.AttachOptions.FILL,
                            xpadding=5, ypadding=5)
-            entry.set_text(locale.format(
+            entry.set_text(locale.format_string(
                 '%.2f', device['free']/1024/1024, True) + ' ' + _('MB'))
             disk_free_progress = Gtk.LevelBar()
             disk_free_progress.set_min_value(0)
