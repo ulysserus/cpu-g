@@ -1,0 +1,18 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=CPU-G
+Comment=Gathers information on CPU, motherboard and more
+Comment[cs_CZ]=Shromažďuje informace o procesoru, základní desce a další
+Comment[fr]=Récolte des informations sur le CPU, la carte-mère et plus
+Comment[pt_BR]=Coleta informações sobre sua CPU, placa-mãe and mais
+Comment[uk_UA]=Збір інформації про процесор, материнську плату і т.і.
+Comment[ru]=Сбор информации о процессоре, материнской плате и др.
+TryExec=/usr/bin/cpu-g
+Exec=/usr/bin/cpu-g
+Icon=cpu-g
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GTK;System;
+X-KDE-SubstituteUID=true

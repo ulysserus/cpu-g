@@ -1,0 +1,498 @@
+# Ukrainian translations for cpu-g package.
+# Copyright (C) 2020 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cpu-g package.
+# Motsyo Gennadi <drool@altlinux.org>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-10 09:26+0100\n"
+"PO-Revision-Date: 2020-04-11 20:49+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: Motsyo Gennadi <drool@altlinux.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: uk_UA\n"
+
+#: src/cpug.py:69
+msgid "Processor"
+msgstr "Процесор"
+
+#: src/cpug.py:70
+msgid "General"
+msgstr "Загальне"
+
+#: src/cpug.py:74 src/cpug.py:268 src/cpug.py:294
+msgid "Vendor"
+msgstr "Виробник"
+
+#: src/cpug.py:85 src/cpug.py:128 src/cpug.py:279
+msgid "Model"
+msgstr "Модель"
+
+#: src/cpug.py:96
+msgid "Core Speed"
+msgstr "Частота ядра"
+
+#: src/cpug.py:112
+msgid "CPU"
+msgstr "ЦП"
+
+#: src/cpug.py:116
+msgid "Family"
+msgstr "Сімейство"
+
+#: src/cpug.py:140
+msgid "Stepping"
+msgstr "Степпінґ"
+
+#: src/cpug.py:152
+msgid "Flags"
+msgstr "Прапорці"
+
+#: src/cpug.py:163
+msgid "Bogomips"
+msgstr ""
+
+#: src/cpug.py:174
+msgid "Width"
+msgstr "Шина"
+
+#: src/cpug.py:187
+msgid "Cache"
+msgstr "Кеш"
+
+#: src/cpug.py:191
+msgid "L1 Data"
+msgstr "L1-дані"
+
+#: src/cpug.py:202
+msgid "L1 Instruction"
+msgstr "L1-інструкції"
+
+#: src/cpug.py:213
+msgid "Level 2"
+msgstr "Рівень 2"
+
+#: src/cpug.py:224
+msgid "Level 3"
+msgstr "Рівень 3"
+
+#: src/cpug.py:236
+msgid "Core selection"
+msgstr "Вибір ядра"
+
+#: src/cpug.py:240
+msgid "Number of cores"
+msgstr "Кількість ядер"
+
+#: src/cpug.py:263
+msgid "Motherboard"
+msgstr "Материнська плата"
+
+#: src/cpug.py:264
+msgid "Board"
+msgstr "Плата"
+
+#: src/cpug.py:290
+msgid "Bios"
+msgstr "BIOS"
+
+#: src/cpug.py:305
+msgid "Version"
+msgstr "Версія"
+
+#: src/cpug.py:316
+msgid "Date"
+msgstr "Дата"
+
+#: src/cpug.py:329
+msgid "Memory"
+msgstr "Пам'ять"
+
+#: src/cpug.py:330
+msgid "Ram"
+msgstr "ОЗП"
+
+#: src/cpug.py:334 src/cpug.py:465
+msgid "Total"
+msgstr "Усього"
+
+#: src/cpug.py:341
+msgid "Total physical memory available."
+msgstr "Доступно усього системної пам'яті."
+
+#: src/cpug.py:346
+msgid "Available"
+msgstr "Доступно"
+
+#: src/cpug.py:353
+msgid ""
+"The actual amount of available memory that can be given instantly to "
+"processes that request more memory in bytes; this is calculated by summing "
+"different memory values (Mb)"
+msgstr ""
+"Фактичний об'єм доступної пам'яті, який можна миттєво надавати процесам при "
+"вимозі більше пам'яті в байтах; обчислюється шляхом підсумовування різних "
+"значень пам'яті (Мб)"
+
+#: src/cpug.py:368 src/cpug.py:478
+msgid "Used"
+msgstr "Використано"
+
+#: src/cpug.py:375
+msgid ""
+"Memory used, calculated differently depending on the platform and designed "
+"for informational purposes only (Mb)"
+msgstr ""
+"Використана пам'ять, обчислена по-різному залежно від платформи та "
+"призначена лише для інформаційних цілей (Мб)"
+
+#: src/cpug.py:389 src/cpug.py:498
+msgid "Free"
+msgstr "Вільно"
+
+#: src/cpug.py:396
+msgid "Memory not being used at all (zeroed) that is readily available (Mb)"
+msgstr "Взагалі не використана пам'ять (обнулена), що є в наявності (Мб)"
+
+#: src/cpug.py:410
+msgid "Active"
+msgstr "Активно"
+
+#: src/cpug.py:417
+msgid "Memory currently in use or very recently used, and so it is in RAM (Mb)"
+msgstr ""
+"Пам'ять, яка зараз використовується або використовувалась щойно, і тому "
+"знаходиться ОЗП (Мб)"
+
+#: src/cpug.py:423
+msgid "Inactive"
+msgstr "Неактивно"
+
+#: src/cpug.py:430
+msgid "Memory that is marked as not used."
+msgstr "Позначено як невикористану пам'ять."
+
+#: src/cpug.py:436
+msgid "Buffers"
+msgstr "Буфери"
+
+#: src/cpug.py:443
+msgid "Ccache for things like file system metadata. (Mb)"
+msgstr "Ccache для таких речей, як метадані файлової системи. (Мб)"
+
+#: src/cpug.py:449
+msgid "Cached"
+msgstr "Кешовано"
+
+#: src/cpug.py:456
+msgid "Cache for various things (Mb)"
+msgstr "Різноманітний кеш (Мб)"
+
+#: src/cpug.py:461
+msgid "Swap"
+msgstr "Підкачка"
+
+#: src/cpug.py:472
+msgid "Total physical memory available in Mb."
+msgstr "Загальна доступна фізична пам'ять в Мб."
+
+#: src/cpug.py:485
+msgid "Used swap memory in Mb"
+msgstr "Задіяно пам'яті підкачки в Мб"
+
+#: src/cpug.py:505
+msgid "Free swap memory in Mb"
+msgstr "Вільно пам'яті підкачки в Мб"
+
+#: src/cpug.py:518
+msgid "Sin"
+msgstr ""
+
+#: src/cpug.py:525
+msgid "The number of Mb the system has swapped in from disk (cumulative)"
+msgstr "Кількість Мб, які система перемкнула на диск (кумулятивно)"
+
+#: src/cpug.py:531
+msgid "Sout"
+msgstr ""
+
+#: src/cpug.py:538
+msgid "The number of Mb the system has swapped out from disk (cumulative)"
+msgstr "Кількість Мб, які система перемкнула з диску (кумулятивно)"
+
+#: src/cpug.py:547
+msgid "System"
+msgstr "Система"
+
+#: src/cpug.py:552
+msgid "Hostname"
+msgstr "Ім'я хоста"
+
+#: src/cpug.py:563
+msgid "Architecture"
+msgstr "Архітектура"
+
+#: src/cpug.py:574
+msgid "Kernel"
+msgstr "Ядро"
+
+#: src/cpug.py:585
+msgid "GCC Version"
+msgstr "Версія GCC"
+
+#: src/cpug.py:596
+msgid "Uptime"
+msgstr "Тривалість роботи"
+
+#: src/cpug.py:607
+msgid "Xorg version"
+msgstr "Версія Xorg"
+
+#: src/cpug.py:618
+msgid "Resolution"
+msgstr "Роздільна здатність"
+
+#: src/cpug.py:630
+msgid "Distribution"
+msgstr "Дистрибутив"
+
+#: src/cpug.py:641
+msgid "Desktop environment"
+msgstr "Середовище стільниці"
+
+#: src/cpug.py:653
+msgid "Window manager"
+msgstr "Менеджер вікон"
+
+#: src/cpug.py:673
+msgid "Graphic"
+msgstr "Графіка"
+
+#: src/cpug.py:678
+msgid "Graphic Controller"
+msgstr "Графічний контроллер"
+
+#: src/cpug.py:689
+msgid "OpenGL Vendor"
+msgstr "Виробник OpenGL"
+
+#: src/cpug.py:700
+msgid "OpenGL renderer"
+msgstr "Рендерінг OpenGL"
+
+#: src/cpug.py:711
+msgid "OpenGL version"
+msgstr "Версія OpenGL"
+
+#: src/cpug.py:731 src/upower.py:102
+msgid "Battery"
+msgstr "Батарея"
+
+#: src/cpug.py:737
+msgid "Manufacturer"
+msgstr "Виробник"
+
+#: src/cpug.py:749
+msgid "Model name"
+msgstr "Модель"
+
+#: src/cpug.py:761
+msgid "Serial number"
+msgstr "Серійний номер"
+
+#: src/cpug.py:773
+msgid "Technology"
+msgstr "Технологія"
+
+#: src/cpug.py:785
+msgid "Estimated time remaining"
+msgstr "Розрахунок залишку часу"
+
+#: src/cpug.py:797
+msgid "Estimated battery discharge time"
+msgstr "Розрахунок часу розрядження"
+
+#: src/cpug.py:809
+msgid "Battery level"
+msgstr "Рівень батареї"
+
+#: src/cpug.py:829
+msgid "Capacity level"
+msgstr "Рівень ємності"
+
+#: src/cpug.py:841
+msgid "Voltage now"
+msgstr "Напруга зараз"
+
+#: src/cpug.py:853
+msgid "Minimum voltage design"
+msgstr "Мінімальна напруга"
+
+#: src/cpug.py:865
+msgid "Charge now"
+msgstr "Заряджається"
+
+#: src/cpug.py:877
+msgid "Charge full"
+msgstr "Повний заряд"
+
+#: src/cpug.py:889
+msgid "Charge full design"
+msgstr ""
+
+#: src/cpug.py:901
+msgid "Current now"
+msgstr "Поточний"
+
+#: src/cpug.py:927
+msgid "Disks"
+msgstr "Диски"
+
+#: src/cpug.py:938
+msgid "About"
+msgstr "Про програму"
+
+#: src/cpug.py:1057
+msgid " %"
+msgstr " %"
+
+#: src/cpug.py:1067 src/cpug.py:1073
+msgid " V"
+msgstr " В"
+
+#: src/cpug.py:1079 src/cpug.py:1085 src/cpug.py:1091
+msgid " Ah"
+msgstr " А/г"
+
+#: src/cpug.py:1097
+msgid " A"
+msgstr " А"
+
+#: src/cpug.py:1107 src/cpug.py:1109 src/cpug.py:1113 src/cpug.py:1116
+#: src/cpug.py:1119 src/cpug.py:1121 src/cpug.py:1123 src/cpug.py:1125
+#: src/cpug.py:1128 src/cpug.py:1132 src/cpug.py:1135 src/cpug.py:1138
+#: src/cpug.py:1140 src/cpug.py:1270 src/cpug.py:1283 src/cpug.py:1304
+msgid "MB"
+msgstr "Мб"
+
+#: src/cpug.py:1206
+msgid "Device"
+msgstr "Пристрій"
+
+#: src/cpug.py:1218
+msgid "Mount Point"
+msgstr "Точка монтування"
+
+#: src/cpug.py:1230
+msgid "File System Type"
+msgstr "Тип файлової системи"
+
+#: src/cpug.py:1242
+msgid "Options"
+msgstr "Опції"
+
+#: src/cpug.py:1258
+msgid "Total space"
+msgstr "Всього"
+
+#: src/cpug.py:1271
+msgid "Used space"
+msgstr "Використано"
+
+#: src/cpug.py:1292
+msgid "Free space"
+msgstr "Вільно"
+
+#: src/upower.py:98 src/upower.py:115 src/upower.py:159 src/upower.py:172
+#: src/upower.py:180 src/upower.py:193
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: src/upower.py:100
+msgid "Line Power"
+msgstr "Потужність"
+
+#: src/upower.py:104
+msgid "Ups"
+msgstr "ДБЖ"
+
+#: src/upower.py:106
+msgid "Monitor"
+msgstr "Монітор"
+
+#: src/upower.py:108
+msgid "Mouse"
+msgstr "Миша"
+
+#: src/upower.py:110
+msgid "Keyboard"
+msgstr "Клавіатура"
+
+#: src/upower.py:112
+msgid "Pda"
+msgstr ""
+
+#: src/upower.py:114
+msgid "Phone"
+msgstr "Телефон"
+
+#: src/upower.py:161
+msgid "Charging"
+msgstr "Зарядка"
+
+#: src/upower.py:163
+msgid "Discharging"
+msgstr "Розрядка"
+
+#: src/upower.py:165
+msgid "Empty"
+msgstr "Пусто"
+
+#: src/upower.py:167
+msgid "Fully charged"
+msgstr "Повний заряд"
+
+#: src/upower.py:169
+msgid "Pending charge"
+msgstr "Очікує зарядки"
+
+#: src/upower.py:171
+msgid "Pending discharge"
+msgstr "Очікує розрядки"
+
+#: src/upower.py:182
+msgid "Lithium ion"
+msgstr "Літій-іон"
+
+#: src/upower.py:184
+msgid "Lithium polymer"
+msgstr "Літій-полімер"
+
+#: src/upower.py:186
+msgid "Lithium iron phosphate"
+msgstr "Літій-фосфат заліза"
+
+#: src/upower.py:188
+msgid "Lead acid"
+msgstr "Свинцево-кислотний"
+
+#: src/upower.py:190
+msgid "Nickel cadmium"
+msgstr "Нікель-кадмій"
+
+#: src/upower.py:192
+msgid "Nickel metal hydride"
+msgstr "Нікель-гідрид металу"
+
+#: src/investigator.py:55 src/investigator.py:288 src/investigator.py:309
+#: src/investigator.py:317 src/investigator.py:401 src/investigator.py:405
+#: src/investigator.py:409 src/investigator.py:413
+msgid "N/A"
+msgstr "Недоступно"

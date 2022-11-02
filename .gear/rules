@@ -1,0 +1,4 @@
+copy: *.patch
+copy: *.desktop
+copy: *.po
+tar.gz: cpu-g
