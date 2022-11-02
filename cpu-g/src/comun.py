@@ -33,6 +33,7 @@ def is_package():
 
 APP = 'cpu-g'
 APPNAME = 'CPU-G'
+VERSION = '0.whatis.21'
 
 # check if running from source
 if is_package():
@@ -58,15 +59,6 @@ else:
     GRAPHICCARDDIR = os.path.normpath(os.path.join(ROOTDIR,
                                                    '../data/graphic_card'))
     BATTERY_MONITOR = os.path.join(ROOTDIR, 'monitor_battery.py')
-
-f = open(CHANGELOG, 'r')
-line = f.readline()
-f.close()
-pos = line.find('(')
-posf = line.find(')', pos)
-VERSION = line[pos + 1:posf].strip()
-if not is_package():
-    VERSION = VERSION + '-src'
 
 ####
 try:

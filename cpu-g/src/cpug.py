@@ -1140,7 +1140,6 @@ cpu-g-donde-ver-hardware-instalado/')
         return True
 
     def close_application(self, widget):
-        print("Quit")
         self.stop_ram_updater()
         self.stop_uptime_updater()
         self.stop_battery_updater()

@@ -31,7 +31,6 @@ from gi.repository import Gdk
 import os
 import re
 import sys
-import platform
 import subprocess
 import shlex
 import distro
@@ -60,7 +59,7 @@ class Investigator():
         try:
             ans = self.execute('/usr/bin/wmctrl -m')
             res = ans[6:ans.find('\n')]
-        except Exception as e:
+        except Exception:
             res = _('N/A')
         return res
 
@@ -124,7 +123,7 @@ class Investigator():
     def convert2int(value):
         try:
             return int(value)
-        except Exception as e:
+        except Exception:
             return value
 
     def is_running(self, process):
@@ -285,9 +284,7 @@ class Investigator():
         coresinsysdev = str(
             len(re.findall("'cpu[0-9]+'",
                            str(os.listdir("/sys/devices/system/cpu/")))))
-        if coresinsysdev == self.cpuinfo('coresnum'):
-            cores_matching = True
-        else:
+        if coresinsysdev != self.cpuinfo('coresnum'):            
             print("Error: Cannot decide if the cores are %s or %s.\n" +
                   "Using the lowest value as the real cores number." %
                   (self.cpuinfo('coresnum'), coresinsysdev))
