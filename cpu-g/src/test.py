@@ -24,8 +24,7 @@
 from gi.repository import Gtk
 
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_gtk3agg import FigureCanvasGTK3Agg as
-FigureCanvas
+from matplotlib.backends.backend_gtk3agg import FigureCanvasGTK3Agg as FigureCanvas
 
 win = Gtk.Window()
 win.connect("delete-event", Gtk.main_quit)

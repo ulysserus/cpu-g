@@ -38,11 +38,11 @@ APPNAME = 'CPU-G'
 
 # check if running from source
 if is_package():
-    ROOTDIR = '/opt/extras.ubuntu.com/cpu-g/share'
-    LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
+    ROOTDIR = '/usr/share'
+    LANGDIR = os.path.join(ROOTDIR, 'locale')
     APPDIR = os.path.join(ROOTDIR, APP)
     CHANGELOG = os.path.join(APPDIR, 'changelog')
-    ICONDIR = os.path.join(ROOTDIR, 'icons')
+    ICONDIR = os.path.join(ROOTDIR, APP)
     ICON = os.path.join(ICONDIR, 'cpu-g.png')
     LOGOSDIR = os.path.join(APPDIR, 'logos')
     DISTROSDIR = os.path.join(APPDIR, 'distros')

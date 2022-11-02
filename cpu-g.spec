@@ -11,9 +11,6 @@ Source0:	%name-%version.tar.gz
 Source1:	%name-uk_UA.po
 Source2:	%name.desktop
 
-Patch0:		%name-patch.patch
-Patch1:		%name-0.16.2-alt_matplotlib.backends.patch
-
 Requires:	/usr/bin/glxinfo
 
 BuildArch: noarch
@@ -27,8 +24,6 @@ general information about your system and more.
 
 %prep
 %setup -n %name-%version
-%patch0 -p1
-%patch1 -p1
 cp %SOURCE1 po/uk_UA.po
 
 %install

@@ -32,9 +32,9 @@ except Exception as e:
 from gi.repository import Gtk
 
 if __name__ == '__main__':
-    if __file__.startswith('/opt/extras.ubuntu.com/cpu-g') or\
-            os.getcwd().startswith('/opt/extras.ubuntu.com/cpu-g'):
-        sys.path.insert(1, '/opt/extras.ubuntu.com/cpu-g/share/cpu-g')
+    if __file__.startswith('/usr/share/cpu-g') or\
+            os.getcwd().startswith('/usr/share/cpu-g'):
+        sys.path.insert(1, '/usr/share/share/cpu-g')
     else:
         sys.path.insert(1,
                         os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../src')))
