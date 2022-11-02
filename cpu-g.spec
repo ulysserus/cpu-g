@@ -8,13 +8,10 @@ Summary: CPU-G is an application that shows useful information about your hardwa
 Url: https://github.com/ulysserus/cpu-g
 
 Source0: %name-%version.tar
-Source1: %name-uk_UA.po
 Source2: %name.desktop
 
 Requires: /usr/bin/glxinfo
 Requires: pciutils
-
-BuildArch: noarch
 
 BuildRequires: /usr/bin/convert python3-dev python3-module-mpl_toolkits
 
@@ -25,20 +22,18 @@ general information about your system and more.
 
 %prep
 %setup -n %name-%version
-cp %SOURCE1 po/uk_UA.po
+
+%build
+./gen_locales %name
 
 %install
-%__mkdir -p %buildroot/%_datadir/{%name,applications,locale/{ca/LC_MESSAGES,es/LC_MESSAGES,eu_ES/LC_MESSAGES,uk_UA/LC_MESSAGES}}
+%__mkdir -p %buildroot/%_datadir/{%name,applications}
 %__mkdir -p $RPM_BUILD_ROOT/%_bindir
 
 cp -a data/{distros,graphic_card,icons,logos} %buildroot/%_datadir/%name/
 cp -a debian/changelog %buildroot/%_datadir/%name/
 cp -a data/icons/%name.png %buildroot/%_datadir/%name/
 cp -a src/*.py %buildroot/%_datadir/%name/
-msgfmt po/ca.po -o %buildroot/%_datadir/locale/ca/LC_MESSAGES/%name.mo
-msgfmt po/es.po -o %buildroot/%_datadir/locale/es/LC_MESSAGES/%name.mo
-msgfmt po/eu_ES.po -o %buildroot/%_datadir/locale/eu_ES/LC_MESSAGES/%name.mo
-msgfmt po/uk_UA.po -o %buildroot/%_datadir/locale/uk_UA/LC_MESSAGES/%name.mo
 
 %__install -m 755 bin/%name %buildroot/%_datadir/%name
 %__install -m 644 %SOURCE2 %buildroot/%_desktopdir
@@ -50,6 +45,8 @@ convert -resize 48x48 data/icons/cpu-g_192.png %buildroot%_liconsdir/%name.png
 convert -resize 32x32 data/icons/cpu-g_192.png %buildroot%_niconsdir/%name.png
 convert -resize 16x16 data/icons/cpu-g_192.png %buildroot%_miconsdir/%name.png
 
+cp -r locale %buildroot/%_datadir/locale
+
 %files
 %doc COPYING README.md
 %dir %_datadir/%name
@@ -60,6 +57,7 @@ convert -resize 16x16 data/icons/cpu-g_192.png %buildroot%_miconsdir/%name.png
 %_niconsdir/%name.png
 %_liconsdir/%name.png
 %_miconsdir/%name.png
+
 
 %changelog
 * Tue Apr 14 2020 Motsyo Gennadi <drool@altlinux.ru> 0.16.2-alt1.1

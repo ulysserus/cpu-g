@@ -45,7 +45,7 @@ from investigator import Investigator
 from upower import BatteryDriver
 from comun import _
 
-locale.setlocale(locale.LC_ALL, '')
+
 
 
 class CPUG(Gtk.Window):

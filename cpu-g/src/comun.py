@@ -72,14 +72,9 @@ if not is_package():
 
 ####
 try:
-    current_locale, encoding = locale.getdefaultlocale()
-    language = gettext.translation(APP, LANGDIR, [current_locale])
-    language.install()
-    print(language)
-    if sys.version_info[0] == 3:
-        _ = language.gettext
-    else:
-        _ = language.ugettext
+    gettext.bindtextdomain(APP, LANGDIR)
+    gettext.textdomain(APP)
+    _ = gettext.gettext
 except Exception as e:
     print(e)
     _ = str

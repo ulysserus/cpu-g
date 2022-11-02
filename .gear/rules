@@ -1,3 +1,2 @@
 copy: *.desktop
-copy: *.po
 tar: cpu-g
