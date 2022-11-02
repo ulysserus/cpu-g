@@ -34,6 +34,7 @@ import sys
 import platform
 import subprocess
 import shlex
+import distro
 import comun
 import psutil
 from distro import get_distro
@@ -306,9 +307,9 @@ class Investigator():
     def distro(self):
         return get_distro()
         try:
-            values = platform.linux_distribution()
+            values = distro.linux_distribution()
         except AttributeError:
-            values = platform.dist()
+            values = distro.linux_distribution(full_distribution_name=False)
         if len(values) == 3:
             return "%s %s %s" % (values[0], values[1], values[2])
         return self.readfile('/etc/issue').strip()
