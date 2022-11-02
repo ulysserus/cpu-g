@@ -1,6 +1,6 @@
 Name: cpu-g
-Version: 0.16.2
-Release: alt2
+Version: 0.17
+Release: alt1
 
 License: GPLv3
 Group: System/Kernel and hardware
@@ -25,6 +25,7 @@ general information about your system and more.
 
 %build
 ./gen_locales %name
+sed -i "s/^VERSION =.*$/VERSION = '%version-%release'/g" ./src/comun.py
 
 %install
 %__mkdir -p %buildroot/%_datadir/{%name,applications}

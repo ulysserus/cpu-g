@@ -33,7 +33,7 @@ def is_package():
 
 APP = 'cpu-g'
 APPNAME = 'CPU-G'
-VERSION = '0.whatis.21'
+VERSION = '0.21.1-alt999'
 
 # check if running from source
 if is_package():
