@@ -153,6 +153,10 @@ class Investigator():
             label = 'intel.png'
         elif vendor == 'Zhaoxin':
             label = 'zhaoxin.png'
+        elif vendor == 'Elbrus-MCST':
+            label = 'e2k.png'
+        else:
+            label = vendor
         # AMDs
         if re.match("AMD Athlon\(tm\) 64 X2.*", model)\
                 or re.match("AMD Athlon\(tm\) X2.*", model):
@@ -240,6 +244,10 @@ class Investigator():
             info = os.path.exists(BATTERY_DIR)
         return info
 
+    def regexmatch_ifexists(self,  regex, str, match_id):
+        matches = re.findall(regex, str)
+        return matches[match_id] if len(matches) else "N/A"
+
     def cpuinfo(self, var, core=0):
         info = self.readfile("/proc/cpuinfo")
 
@@ -249,30 +257,30 @@ class Investigator():
                 vendor[core] = 'AMD'
             elif vendor[core] == 'GenuineIntel':
                 vendor[core] = 'Intel'
-            elif vendor[core] == 'CentaurHauls' or 'Shanghai':
+            elif vendor[core] == 'CentaurHauls' or  vendor[core] =='Shanghai':
                 vendor[core] = 'Zhaoxin'
             return vendor[core]
         elif var == 'corespeed':
-            return re.findall("cpu MHz\s*:\s*(.*)", info)[core] + ' MHz'
+            return self.regexmatch_ifexists("cpu MHz\s*:\s*(.*)", info,  core) + ' MHz'
         elif var == 'model':
-            return re.findall("model name\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("model name\s*:\s*(.*)", info,  core)
         elif var == 'cache':
-            return re.findall("cache size\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("cache size\s*:\s*(.*)", info,  core)
         elif var == 'modelnumber':
-            return re.findall("model\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("model\s*:\s*(.*)", info,  core)
         elif var == 'family':
-            return re.findall("cpu family\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("cpu family\s*:\s*(.*)", info,  core)
         elif var == 'stepping':
-            return re.findall("stepping\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("stepping\s*:\s*(.*)", info,  core)
         elif var == 'coresnum':
             return str(len(re.findall("processor\s*:\s*(.*)", info)))
         elif var == 'flags':
-            return re.findall("flags\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("flags\s*:\s*(.*)", info,  core)
         elif var == 'bogomips':
-            return re.findall("bogomips\s*:\s*(.*)", info)[core]
+            return self.regexmatch_ifexists("bogomips\s*:\s*(.*)", info,  core)
         elif var == 'width':
             if re.findall(' lm(?![-a-zA-Z0-9_])',
-                          re.findall("flags\s*:(.*)", info)[core]):
+                          self.regexmatch_ifexists("flags\s*:(.*)", info,  core)):
                 width = '64-bit'
             else:
                 width = '32-bit'
@@ -415,15 +423,15 @@ class Investigator():
         vga = self.execute('/usr/bin/lspci', 'VGA[^:]*:(.*)')
         if var == 'vendor':
             if open_gl_ != '':
-                return re.findall("OpenGL vendor string: (.*)", open_gl_)[0]
+                return self.regexmatch_ifexists("OpenGL vendor string: (.*)", open_gl_,  0)
             return _('N/A')
         elif var == 'renderer':
             if open_gl_ != '':
-                return re.findall("OpenGL renderer string: (.*)", open_gl_)[0]
+                return self.regexmatch_ifexists("OpenGL renderer string: (.*)", open_gl_,  0)
             return _('N/A')
         elif var == 'version':
             if open_gl_ != '':
-                return re.findall("OpenGL version string: (.*)", open_gl_)[0]
+                return self.regexmatch_ifexists("OpenGL version string: (.*)", open_gl_,  0)
             return _('N/A')
         elif var == 'VGA':
             if vga is not None:

@@ -1175,7 +1175,6 @@ cpu-g-donde-ver-hardware-instalado/')
         self.distribution.set_text(inv.distro())
         distro_logo = inv.get_distro_logo()
         if distro_logo is not None:
-            print(distro_logo)
             self.distro_logo.set_from_file(distro_logo)
         #
         self.graphic_controller.set_text(inv.open_gl('VGA'))
